@@ -1,0 +1,1 @@
+<div id='test' lv-text="testFlag"></div>

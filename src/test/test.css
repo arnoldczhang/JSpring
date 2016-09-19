@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft yahei,Lucida Grande,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Hiragino Sans GB W3,WenQuanYi Micro Hei,sans-serif;
+}
+ul {
+    list-style: none;
+}
+i{
+    font-style: normal;
+}
+input,button,select,textarea{outline:none;}
+#container {
+    height: 100%;
+    position: relative;
+}

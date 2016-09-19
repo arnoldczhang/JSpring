@@ -1,0 +1,36 @@
+{
+  "name": "JSpring",
+  "version": "1.0.0",
+  "description": "JSpring",
+  "main": "main.js",
+  "dependencies": {
+    "webpack": "^1.12.13"
+  },
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "fs": "0.0.2",
+    "html-loader": "^0.3.0",
+    "html-webpack-plugin": "^2.22.0",
+    "image-loader": "0.0.1",
+    "image-webpack-loader": "^1.8.0",
+    "less-loader": "^2.2.2",
+    "raw-loader": "^0.5.1",
+    "request": "^2.72.0",
+    "style-loader": "^0.13.0",
+    "text-loader": "0.0.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --inline --hot --content-base ."
+  },
+  "keywords": [
+    "JSpring"
+  ],
+  "author": "Arnold",
+  "license": "ISC"
+}
