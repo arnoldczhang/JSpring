@@ -1,10 +1,9 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
-var version = '20160919001';
-var serverFlag = false;
-
+var version = updateVersion();
+var serverFlag = true;//open wepack-server flag
 var HOST = '.';
+var env = process.env.NODE_ENV;
 var lib = './lib/';
 var src = './src/';
 var entryArr = [src + 'main.js'];
@@ -12,30 +11,41 @@ var plugins = [
     new webpack.optimize.DedupePlugin(),
     new HtmlWebpackPlugin({
         template : src + 'index.html',
-        filename : 'index.html'
+        filename : '../index.html'
     })
 ];
-
-//if use webpack-dev-server
-if (serverFlag) {
-    var HOST = 'http://localhost:8080';
-    [].push.apply(entryArr, ['webpack-dev-server/client?http://0.0.0.0:8080', 'webpack/hot/only-dev-server']);
-    plugins.push(new webpack.HotModuleReplacementPlugin());
-}
-
-var dest = HOST + '/dist/';
 
 var entryObj = {
     'entry': entryArr
 };
 
-if (process.env.NODE_ENV != 'development') {
+//if use webpack-dev-server
+if (serverFlag) {
+    HOST = 'http://localhost:8080';
+}
+
+if (env != 'development') {
     plugins.push(new webpack.optimize.UglifyJsPlugin({
         compress: {
             warnings: false
         }
     }));
+
+    if (env == 'production') {
+        HOST = '.';
+    }
+} else {
+    [].push.apply(entryArr, ['webpack-dev-server/client?http://0.0.0.0:8080', 'webpack/hot/only-dev-server']);
+    plugins.push(new webpack.HotModuleReplacementPlugin());
 }
+var dest = HOST + '/dist/';
+
+function updateVersion () {
+    var date = new Date;
+    var version = date.getFullYear() + '' + (date.getMonth() + 1) + date.getDate();
+    var hash = ~~(Math.random() * 1001);
+    return version + hash;
+};
 
 module.exports = {
     //页面入口
