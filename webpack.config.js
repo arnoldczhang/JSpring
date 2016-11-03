@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var version = updateVersion();
-var serverFlag = true;//open wepack-server flag
+var serverFlag = false;//open wepack-server flag
 var HOST = '.';
 var env = process.env.NODE_ENV;
 var lib = './lib/';
