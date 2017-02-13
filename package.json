@@ -4,9 +4,7 @@
   "description": "JSpring",
   "main": "main.js",
   "dependencies": {
-    "webpack": "^1.12.13"
-  },
-  "devDependencies": {
+    "webpack": "^1.12.13",
     "colors": "^1.1.2",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
@@ -23,6 +21,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.16.1"
+  },
+  "devDependencies": {
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
